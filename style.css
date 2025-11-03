@@ -1,0 +1,38 @@
+:root{
+  --bg1:#00121a;
+  --bg2:#000814;
+  --accent:#00eaff;
+  --muted:#9fd8ff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Courier New",monospace;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e6f7ff}
+header{padding:14px 22px}
+h1{margin:0;color:var(--accent);font-size:18px}
+p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+main{display:flex;gap:18px;padding:12px 22px}
+#controls{
+  width:320px;
+  background:rgba(0,10,20,0.5);
+  border:1px solid rgba(0,255,255,0.12);
+  padding:14px;border-radius:12px;height:600px;overflow:auto;
+  box-shadow:0 6px 30px rgba(0,160,200,0.06)
+}
+.row{margin-bottom:12px;display:flex;flex-direction:column;gap:6px}
+.row label{font-size:13px;color:#cfefff;display:flex;justify-content:space-between}
+input[type=range]{width:100%}
+.toggles{display:flex;flex-direction:row;gap:8px;flex-wrap:wrap}
+.toggles label{font-size:13px;display:flex;align-items:center;gap:6px}
+button{background:linear-gradient(90deg,rgba(0,255,255,0.08),rgba(0,255,255,0.02));border:1px solid rgba(0,255,255,0.12);color:var(--accent);padding:8px 12px;border-radius:8px;cursor:pointer}
+.small{font-size:13px;color:#cfefff}
+
+canvas{flex:1;border-radius:8px;box-shadow:0 10px 60px rgba(0,200,255,0.06);border:1px solid rgba(0,255,255,0.04);background:transparent}
+footer{padding:12px 22px;color:#9fd8ff;font-size:12px}
+
+/* make the control panel and canvas fit on smaller screens */
+@media (max-width:1000px){
+  main{flex-direction:column}
+  #controls{width:100%;height:auto}
+  canvas{height:360px}
+}
