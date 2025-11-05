@@ -1,67 +1,38 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Interactive Quantum Wave</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Interactive Quantum Wave — ψ(x,t)</h1>
-    <p>Equation visualized: ψ(x,t) = A e^{-(x-x₀-vt)²/(2σ²)} · e^{i(kx - ωt)}</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quantum Wave — ψ(x,t)</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.min.js"></script>
+    <script src="https://unpkg.com/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
 
-  <main>
-    <canvas id="waveCanvas"></canvas>
-
-    <aside id="controls">
-      <div class="row">
-        <label>k (wave-number) <span id="kVal">3.0</span></label>
-        <input id="kSlider" type="range" min="0.2" max="8" step="0.1" value="3.0"/>
+  </head>
+  <body>
+    <div id="app">
+      <div class="quantum-app">
+        <header class="app-header">
+          <h1>Interactive Quantum Wave — ψ(x,t)</h1>
+          <p class="subtitle">Real-time visualization of quantum wave packet dynamics</p>
+          <div class="header-controls">
+            <button id="toggle-heatmap" class="header-btn">Toggle 2D Heatmap</button>
+            <button id="toggle-momentum" class="header-btn">Toggle Momentum Space</button>
+            <button id="share-state" class="header-btn">Share State</button>
+          </div>
+        </header>
+        <div class="main-content">
+          <div class="canvas-container">
+            <canvas id="quantum-canvas"></canvas>
+            <button id="pan-left-btn" class="canvas-btn canvas-pan-left" title="Pan View Left (Left Arrow)">&lt;</button>
+            <button id="pan-right-btn" class="canvas-btn canvas-pan-right" title="Pan View Right (Right Arrow)">&gt;</button>
+          </div>
+          <div id="controls-container">
+          </div>
+        </div>
       </div>
-
-      <div class="row">
-        <label>ω (angular freq) <span id="omegaVal">4.5</span></label>
-        <input id="omegaSlider" type="range" min="0.1" max="20" step="0.1" value="4.5"/>
-      </div>
-
-      <div class="row">
-        <label>Envelope σ (width) <span id="sigmaVal">1.0</span></label>
-        <input id="sigmaSlider" type="range" min="0.2" max="4" step="0.1" value="1.0"/>
-      </div>
-
-      <div class="row">
-        <label>Amplitude A <span id="ampVal">1.0</span></label>
-        <input id="ampSlider" type="range" min="0.1" max="3" step="0.1" value="1.0"/>
-      </div>
-
-      <div class="row">
-        <label>Packet speed (v) <span id="vVal">0.6</span></label>
-        <input id="vSlider" type="range" min="-3" max="3" step="0.05" value="0.6"/>
-      </div>
-
-      <div class="row toggles">
-        <label><input id="showReal" type="checkbox" checked/> Show Re(ψ)</label>
-        <label><input id="showImag" type="checkbox" checked/> Show Im(ψ)</label>
-        <label><input id="showProb" type="checkbox" /> Show |ψ|²</label>
-      </div>
-
-      <div class="row">
-        <button id="toggleBtn">⏸ Pause</button>
-        <button id="resetBtn">⟲ Reset t=0</button>
-      </div>
-
-      <div class="row small">
-        <span>time: <strong id="timeVal">0.00</strong> s</span>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    <small>Tip: increase σ for broader packet, increase k for tighter oscillations.</small>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
