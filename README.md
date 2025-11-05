@@ -75,7 +75,3 @@
 * `counter.js`: (Example counter module, can be removed)
 
 ---
-
-## 📄 License
-
-This project is open-source. Feel free to use it for educational or personal purposes. (You can add a specific license like MIT if you wish).
