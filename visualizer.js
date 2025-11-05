@@ -432,7 +432,7 @@ export class Visualizer {
     this.ctx.fillStyle = '#888899';
     this.ctx.font = '14px Inter, sans-serif';
     const xLabel = this.showMomentumSpace ? 'k (wave number)' : 'x (position)';
-    const yLabel = this.showMomentumSpace ? '|ψ̃(k)|' : 'ψ(x,t)';
+    const yLabel = this.showMomentumSpace ? '|ψ̃(k)|' : 'ψ(x,t) / |ψ(x,t)|^2';
     this.ctx.textAlign = 'center';
     this.ctx.fillText(xLabel, this.padding.left + this.plotWidth / 2, this.padding.top + this.plotHeight + 40);
     this.ctx.save();
