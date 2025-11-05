@@ -2,7 +2,7 @@
 
 **Quantum Wave Lab** is a real-time, interactive 1D quantum wave packet simulator that runs entirely in your browser. It provides a visual sandbox for exploring fundamental quantum mechanics concepts, including wave packet evolution, dispersion, potential barriers, and superposition.
 
-![Screenshot of Quantum Wave Lab](https://QM.png) 
+![Screenshot of Quantum Wave Lab](QM.png) 
 
 ---
 
