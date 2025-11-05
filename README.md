@@ -2,7 +2,7 @@
 
 **Quantum Wave Lab** is a real-time, interactive 1D quantum wave packet simulator that runs entirely in your browser. It provides a visual sandbox for exploring fundamental quantum mechanics concepts, including wave packet evolution, dispersion, potential barriers, and superposition.
 
-![Screenshot of Quantum Wave Lab](QM.png) 
+![Screenshot of Quantum Wave Lab](QM.png)
 
 ---
 
@@ -62,3 +62,20 @@
 ---
 
 ## 📁 File Structure
+
+* `QM.png`: Project screenshot
+* `index.html`: The main HTML entry point
+* `style.css`: All styling for the application
+* `main.js`: Main app class, initializes engine/UI, runs animation loop
+* `quantum-engine.js`: Core physics logic and calculations
+* `visualizer.js`: Renders the 1D Position and Momentum space canvas
+* `HeatmapVisualizer.js`: Renders the 2D position-vs-time heatmap
+* `ui-controls.js`: Dynamically creates and manages the control panel
+* `RecordingService.js`: A wrapper for CCapture.js to handle recording
+* `counter.js`: (Example counter module, can be removed)
+
+---
+
+## 📄 License
+
+This project is open-source. Feel free to use it for educational or personal purposes. (You can add a specific license like MIT if you wish).
